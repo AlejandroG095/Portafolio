@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #333;
+    --background-color: #f5f6fa;
+    --spacing-unit: 2rem;
+    --max-width: 1200px;
+    --header-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem var(--spacing-unit);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: var(--header-height);
+}
+
+#inicio {
+    margin-top: var(--header-height);
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+/* menu */
+.menu {
+    flex: 1;
+    max-width: 600px;
+    margin-left: var(--spacing-unit);
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    flex: 1;
+    text-align: center;
+}
+
+.menu-list a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Main Content */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+/* About Me Section */
+.aboutMe {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-unit);
+    margin: var(--spacing-unit) 0;
+    padding: var(--spacing-unit);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.profilePhoto {
+    width: 250px;
+    height: 250px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.description {
+    padding: var(--spacing-unit);
+}
+
+.downloadCv {
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.downloadCv:hover {
+    transform: translateY(-2px);
+}
+
+/* Projects Section */
+.projects {
+    margin: var(--spacing-unit) 0;
+}
+
+.projectsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-unit);
+}
+
+.project {
+    background-color: white;
+    border-radius: 10px;
+    padding: var(--spacing-unit);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.projectImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.projectTitle {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.projectLink {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Academic & Certifications Section */
+.academic\&certifications {
+    margin: var(--spacing-unit) 0;
+}
+
+.academic\&certificationsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-unit);
+}
+
+.certifications {
+    background-color: white;
+    border-radius: 10px;
+    padding: var(--spacing-unit);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.certificationImage {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.certificationTitle {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.certificationLink {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-unit);
+    margin-top: var(--spacing-unit);
+}
+
+.contact\&socialContainer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 70px;
+    }
+
+    .menu {
+        max-width: 100%;
+        margin-left: 1rem;
+    }
+    
+    .menu-list {
+        font-size: 0.9rem;
+    }
+    
+    .menu-list a {
+        padding: 0.5rem;
+    }
+
+    .aboutMe {
+        grid-template-columns: 1fr;
+    }
+
+    .projectsContainer,
+    .academic\&certificationsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        height: 50px;
+    }
+
+}
