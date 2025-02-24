@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Funnel+Display:wght@300..800&display=swap');
 :root {
     --primary-color: #2c3e50;
-    --secondary-color: #3498db;
+    --secondary-color: #485696;
     --text-color: #333;
     --background-color: #f5f6fa;
     --spacing-unit: 2rem;
@@ -15,7 +16,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -104,6 +105,9 @@ main {
     margin: var(--spacing-unit) 0;
     padding: var(--spacing-unit);
     background-color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -111,27 +115,92 @@ main {
 .profilePhoto {
     width: 250px;
     height: 250px;
+    justify-content: center;
+    align-items: center;
     background-color: #ddd;
     border-radius: 50%;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.profilePhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .description {
     padding: var(--spacing-unit);
 }
 
+.description h2{
+    margin: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--secondary-color)
+}
+
+.description p{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contactContainer{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+}
+
+.contact h3{
+    margin: 1rem 0;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.contact a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 .downloadCv {
-    padding: 1rem 2rem;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', 'sans-serif';
     background-color: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .downloadCv:hover {
-    transform: translateY(-2px);
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.downloadCv:active{
+    animation: bounce 0.4s ease;
+    background-color: #1e2a4a;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 /* Projects Section */
@@ -175,42 +244,112 @@ main {
 }
 
 /* Academic & Certifications Section */
-.academic\&certifications {
-    margin: var(--spacing-unit) 0;
-}
-
-.academic\&certificationsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-unit);
-}
-
-.certifications {
+.certifications-section {
+    text-align: center;
     background-color: white;
     border-radius: 10px;
     padding: var(--spacing-unit);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.certificationImage {
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certification-image {
     width: 100%;
-    height: 150px;
-    object-fit: contain;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.certification-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.certificationTitle {
-    margin: 1rem 0;
-    font-size: 1.25rem;
+.certification-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-.certificationLink {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
+.certification-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.certification-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', 'sans-serif';
     background-color: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: auto;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.certification-link:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+.certification-link:active{
+    animation: bounceCertif 0.4s ease;
+    background-color: #1e2a4a;
+}
+@keyframes bounceCertif {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    70% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .certifications-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .certifications-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 /* Footer */
@@ -224,6 +363,40 @@ footer {
 .contact\&socialContainer {
     max-width: var(--max-width);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left; 
+    padding-left: 20px; 
+}
+
+.social-links {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+
+.contact-info a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info a:hover {
+    transform: translateY(-0.9px);
 }
 
 /* Responsive */

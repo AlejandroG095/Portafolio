@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,17 +29,21 @@
     <main>
         <section id="sobre-mi" class="aboutMe">
             <div class="profilePhoto">
-                <!-- Aquí va la foto de perfil -->
+                <img src="/images/img-perfil.jpg" alt="miFoto">
             </div>
             <div class="description">
                 <h2>Sobre Mí</h2>
-                <p>¡Hola! Soy, un apasionado desarrollador web con experiencia en...</p>
-                <div class="contact">
-                    <h3>Información de Contacto</h3>
-                    <p>Email: yo@email.com</p>
-                    <p>Teléfono: +XX XXXXXXXX</p>
-                </div>
-                <button class="downloadCv">Descargar CV</button>
+                <p>¡Hola! Soy Alejandro, ingeniero de sistemas y un apasionado desarrollador web  especializado en Java y Spring Boot, con experiencia en APIs RESTful y bases de datos relacionales. Poseo conocimientos en tecnologías web como HTML, CSS, JavaScript, lo que me permite colaborar en entornos full-stack. Entusiasta del aprendizaje y la innovación, siempre en búsqueda de aportar soluciones eficientes y crecer junto a un equipo dinámico.</p>
+                <div class="contactContainer">
+                    <div class="contact">
+                        <h3>Información de Contacto</h3>
+                        <a href="mailto:alejo_gutierrez95@hotmail.com">Email: alejo_gutierrez95@hotmail.com</a>
+                        <a href="https://wa.me/3043573838">Teléfono: +57 304 537 3838</a>
+                    </div>
+                    <a href="/files/CV-Pedro-Gutierrez_250224_001612.pdf">
+                        <button class="downloadCv">Descargar CV</button>
+                    </a>                    
+                </div>                
             </div>
         </section>
 
@@ -54,17 +59,11 @@
             </div>
         </section>
 
-        <section id="certificaciones" class="academic&certifications">
-            <h2 class="section-title">Formación y Certificaciones</h2>
-            <div class="academic&certificationsContainer">
-                <article class="certifications">
-                    <img class="certificationImage" src="" alt="Certificación 1">
-                    <h3 class="certificationTitle">Nombre de la Certificación</h3>
-                    <p class="certificationDescription">Detalles sobre la certificación y la institución que la otorga.</p>
-                    <button class="certificationLink">Ver Certificado</button>
-                </article>
-            </div>
+        <h2 class="section-title">Formación y Certificaciones</h2>
+        <section id="certificaciones" class="certifications-section">            
+            <div id="certifications-container" class="certifications-container"></div>
         </section>
+ 
     </main>
 
     <footer id="contacto">
@@ -72,16 +71,22 @@
             <div class="contact&socialContainer">
                 <h2>Contacto y Redes Sociales</h2>
                 <div class="social-links">
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">GitHub</a>
-                    <a href="#" class="social-link">Twitter</a>
+                    <a href="https://www.linkedin.com/in/pedro-alejandro-gutierrez-garcia-05530796/" 
+                       class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> 
+                    </a>
+                    <a href="https://github.com/AlejandroG095" 
+                       class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
                 <div class="contact-info">
                     <p>¿Interesado en trabajar juntos?</p>
-                    <p>Envíame un mensaje a: contacto@tuemail.com</p>
+                    <a href="mailto:alejo_gutierrez95@hotmail.com">Envíame un mensaje a: alejo_gutierrez95@hotmail.com</a>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
